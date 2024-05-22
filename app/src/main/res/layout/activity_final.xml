@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinalActivity">
+
+    <ImageView
+        android:id="@+id/final_activity_wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/button_download"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/navbar_download_icon"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="85dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="85dp"/>
+
+        <ImageView
+            android:id="@+id/button_set_wallpaper"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/navbar_set_wallpaper"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="85dp"
+            android:layout_marginRight="85dp"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

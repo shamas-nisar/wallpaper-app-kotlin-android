@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_purple">#C738BD</color>
+    <color name="wallpaper_primary_color">#850F8D</color>
+    <color name="app_background_color">#1F2544</color>
+    <color name="splash_screen_color">#A367B1</color>
+    <color name="normal_text_color">#2A2F4F</color>
+    <color name="heading_color">#0C134F</color>
+</resources>

@@ -44,7 +44,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="225dp"
+            android:layout_width="275dp"
             android:layout_height="225dp"
             android:layout_gravity="center"
             android:background="@drawable/splash_screen_gif1"

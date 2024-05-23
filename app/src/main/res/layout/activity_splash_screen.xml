@@ -31,6 +31,7 @@
 
     </RelativeLayout>
 
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -46,7 +47,7 @@
             android:layout_width="225dp"
             android:layout_height="225dp"
             android:layout_gravity="center"
-            android:background="@drawable/splash_screen_background_img"
+            android:background="@drawable/splash_screen_gif1"
             tools:layout_editor_absoluteX="248dp"
             tools:layout_editor_absoluteY="458dp" />
 

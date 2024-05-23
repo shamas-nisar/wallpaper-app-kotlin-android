@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.wallpaperapp.adapter.AdapterDownImgList
+import com.example.wallpaperapp.adapter.WallpaperDownloadAdapter
 import com.example.wallpaperapp.databinding.FragmentDownloadBinding
 import java.io.File
 
@@ -35,7 +35,7 @@ class DownloadFragment : Fragment() {
         }
 
         binding.downloadedImagesRecyclerview.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        binding.downloadedImagesRecyclerview.adapter = AdapterDownImgList(requireContext(), imageList)
+        binding.downloadedImagesRecyclerview.adapter = WallpaperDownloadAdapter(requireContext(), imageList)
 
         return binding.root
     }

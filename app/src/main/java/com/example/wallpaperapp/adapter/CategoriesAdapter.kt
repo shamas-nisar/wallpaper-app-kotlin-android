@@ -9,12 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.wallpaperapp.CatListActivity
+import com.example.wallpaperapp.ui.CatListActivity
 import com.example.wallpaperapp.R
-import com.example.wallpaperapp.model.ModelBestOfMonth
-import com.example.wallpaperapp.model.ModelCategories
+import com.example.wallpaperapp.model.Categories
 
-class AdapterCategories(val requireContext: Context, val listOfCategories: ArrayList<ModelCategories>) : RecyclerView.Adapter<AdapterCategories.bomViewHolder>() {
+class CategoriesAdapter(val requireContext: Context, val listOfCategories: ArrayList<Categories>) : RecyclerView.Adapter<CategoriesAdapter.bomViewHolder>() {
 
     inner class bomViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
     {

@@ -1,15 +1,18 @@
 package com.example.wallpaperapp.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.wallpaperapp.ui.FinalActivity
 import com.example.wallpaperapp.R
+import com.example.wallpaperapp.model.Categories
 import com.makeramen.roundedimageview.RoundedImageView
 
-class AdapterDownImgList(val requireContext: Context, val listBestOFMonth: ArrayList<String>) : RecyclerView.Adapter<AdapterDownImgList.bomViewHolder>() {
+class CatListAdapter(val requireContext: Context, val listBestOFMonth: ArrayList<Categories>) : RecyclerView.Adapter<CatListAdapter.bomViewHolder>() {
 
     inner class bomViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
     {
@@ -23,7 +26,12 @@ class AdapterDownImgList(val requireContext: Context, val listBestOFMonth: Array
     }
 
     override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
-        Glide.with(requireContext).load(listBestOFMonth[position]).into(holder.showImage)
+        Glide.with(requireContext).load(listBestOFMonth[position].link).into(holder.showImage)
+        holder.itemView.setOnClickListener {
+            val intent = Intent(requireContext, FinalActivity::class.java)
+            intent.putExtra("link", listBestOFMonth[position].link)
+            requireContext.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = listBestOFMonth.size

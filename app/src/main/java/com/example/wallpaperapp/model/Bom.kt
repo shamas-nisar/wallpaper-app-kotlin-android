@@ -1,6 +1,6 @@
 package com.example.wallpaperapp.model
 
-data class ModelBestOfMonth(
+data class Bom(
     val id: String = "",
     val link: String = ""
 )

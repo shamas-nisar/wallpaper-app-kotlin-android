@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FinalActivity">
+    tools:context=".ui.FinalActivity">
 
     <ImageView
         android:id="@+id/final_activity_wallpaper"

@@ -21,9 +21,9 @@
         android:theme="@style/Theme.WallpaperApp"
         tools:targetApi="31">
         <activity
-            android:name=".CatListActivity"
+            android:name=".ui.CatListActivity"
             android:exported="false" />
-        <activity android:name=".FinalActivity" />
+        <activity android:name=".ui.FinalActivity" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.MainActivity" />
     </application>
 
 </manifest>

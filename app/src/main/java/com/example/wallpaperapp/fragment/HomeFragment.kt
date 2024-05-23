@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.wallpaperapp.adapter.AdapterBestOfMonth
-import com.example.wallpaperapp.adapter.AdapterCategories
-import com.example.wallpaperapp.adapter.AdapterColorTone
+import com.example.wallpaperapp.adapter.BomAdapter
+import com.example.wallpaperapp.adapter.CategoriesAdapter
+import com.example.wallpaperapp.adapter.ColorToneAdapter
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
-import com.example.wallpaperapp.model.ModelBestOfMonth
-import com.example.wallpaperapp.model.ModelCategories
-import com.example.wallpaperapp.model.ModelColorTones
+import com.example.wallpaperapp.model.Bom
+import com.example.wallpaperapp.model.Categories
+import com.example.wallpaperapp.model.ColorTones
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -33,32 +33,32 @@ class HomeFragment : Fragment() {
         db = FirebaseFirestore.getInstance()
 
         db.collection("bestofmonth").addSnapshotListener { value, error ->
-            val listBestOFMonth = arrayListOf<ModelBestOfMonth>()
-            val data = value?.toObjects(ModelBestOfMonth::class.java)
+            val listBestOFMonth = arrayListOf<Bom>()
+            val data = value?.toObjects(Bom::class.java)
             listBestOFMonth.addAll(data!!)
 
             binding.bestOfMonthRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
-            binding.bestOfMonthRecyclerview.adapter = AdapterBestOfMonth(requireContext(), listBestOFMonth)
+            binding.bestOfMonthRecyclerview.adapter = BomAdapter(requireContext(), listBestOFMonth)
 
         }
 
         db.collection("colortones").addSnapshotListener { value, error ->
-            val listOfColorTones = arrayListOf<ModelColorTones>()
-            val data = value?.toObjects(ModelColorTones::class.java)
+            val listOfColorTones = arrayListOf<ColorTones>()
+            val data = value?.toObjects(ColorTones::class.java)
             listOfColorTones.addAll(data!!)
 
             binding.theColorToneRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
-            binding.theColorToneRecyclerview.adapter = AdapterColorTone(requireContext(), listOfColorTones)
+            binding.theColorToneRecyclerview.adapter = ColorToneAdapter(requireContext(), listOfColorTones)
 
         }
 
         db.collection("categories").addSnapshotListener { value, error ->
-            val listOfCategories = arrayListOf<ModelCategories>()
-            val data = value?.toObjects(ModelCategories::class.java)
+            val listOfCategories = arrayListOf<Categories>()
+            val data = value?.toObjects(Categories::class.java)
             listOfCategories.addAll(data!!)
 
             binding.theColorToneRecyclerview.layoutManager = GridLayoutManager(requireContext(),2)
-            binding.categoryRecyclerview.adapter = AdapterCategories(requireContext(), listOfCategories)
+            binding.categoryRecyclerview.adapter = CategoriesAdapter(requireContext(), listOfCategories)
 
         }
 

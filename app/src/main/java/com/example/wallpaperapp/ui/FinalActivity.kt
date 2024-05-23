@@ -1,4 +1,4 @@
-package com.example.wallpaperapp
+package com.example.wallpaperapp.ui
 
 import android.app.WallpaperManager
 import android.content.ContentValues

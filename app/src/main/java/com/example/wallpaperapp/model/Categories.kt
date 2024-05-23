@@ -1,6 +1,6 @@
 package com.example.wallpaperapp.model
 
-data class ModelCategories(
+data class Categories(
     val id: String = "",
     val link: String = "",
     val name: String = ""

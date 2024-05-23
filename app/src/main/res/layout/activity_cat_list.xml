@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CatListActivity">
+
+    <TextView
+        android:id="@+id/catList_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abstract"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="39dp"
+        android:fontFamily="@font/nunito_bold"
+        android:textColor="@color/app_background_color"/>
+
+    <TextView
+        android:id="@+id/catImages_count"
+        android:layout_below="@+id/catList_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5 wallpaper available in this category"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/nunito_semi_bold"
+        android:textColor="@color/app_background_color"/>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/catList_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/catImages_count">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

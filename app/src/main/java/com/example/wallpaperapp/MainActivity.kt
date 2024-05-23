@@ -19,7 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
+
         setContentView(binding.root)
+
         // To change the interface when the user clicks on the fragment
         replaceFragment(HomeFragment())
 

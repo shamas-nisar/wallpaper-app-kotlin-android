@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/downlaoded_txtMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -20,7 +21,13 @@
             android:textColor="@color/normal_text_color"
             android:textSize="24dp" />
 
-    </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/downloadedImages_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/downlaoded_txtMain"/>
 
+
+    </RelativeLayout>
 
 </FrameLayout>

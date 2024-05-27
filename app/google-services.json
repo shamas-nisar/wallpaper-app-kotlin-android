@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "383139262500",
-    "project_id": "wallpaper-app-kotlin0",
-    "storage_bucket": "wallpaper-app-kotlin0.appspot.com"
+    "project_number": "1096185038466",
+    "project_id": "wallpaper-app-using-firebase",
+    "storage_bucket": "wallpaper-app-using-firebase.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:383139262500:android:fc16c81a9a30f2ba3ae8b1",
+        "mobilesdk_app_id": "1:1096185038466:android:3cfc0fc11ff32c7e49969b",
         "android_client_info": {
           "package_name": "com.example.wallpaperapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD3gJZO7aKA7Zzunm2LM8c3zP-hQQ9Mk04"
+          "current_key": "AIzaSyBcr2_6yuGtVKNOGi7BD-g75S3NC_2R5FM"
         }
       ],
       "services": {

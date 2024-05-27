@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.wallpaperapp" />
-                  <option name="mobileSdkAppId" value="1:383139262500:android:fc16c81a9a30f2ba3ae8b1" />
-                  <option name="projectId" value="wallpaper-app-kotlin0" />
-                  <option name="projectNumber" value="383139262500" />
+                  <option name="mobileSdkAppId" value="1:1096185038466:android:3cfc0fc11ff32c7e49969b" />
+                  <option name="projectId" value="wallpaper-app-using-firebase" />
+                  <option name="projectNumber" value="1096185038466" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

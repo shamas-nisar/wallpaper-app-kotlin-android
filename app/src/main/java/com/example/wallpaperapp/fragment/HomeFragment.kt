@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.wallpaperapp.adapter.BomAdapter
 import com.example.wallpaperapp.adapter.CategoriesAdapter
 import com.example.wallpaperapp.adapter.ColorToneAdapter
@@ -57,8 +58,11 @@ class HomeFragment : Fragment() {
             val data = value?.toObjects(Categories::class.java)
             listOfCategories.addAll(data!!)
 
-            binding.theColorToneRecyclerview.layoutManager = GridLayoutManager(requireContext(),2)
+            val layoutManagement = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            binding.categoryRecyclerview.layoutManager = layoutManagement
             binding.categoryRecyclerview.adapter = CategoriesAdapter(requireContext(), listOfCategories)
+//            binding.categoryRecyclerview.layoutManager = GridLayoutManager(requireContext(),2)
+//            binding.categoryRecyclerview.adapter = CategoriesAdapter(requireContext(), listOfCategories)
 
         }
 

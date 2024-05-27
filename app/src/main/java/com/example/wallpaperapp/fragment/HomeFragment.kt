@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
             val data = value?.toObjects(Bom::class.java)
             listBestOFMonth.addAll(data!!)
 
-            binding.bestOfMonthRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
+            binding.bestOfMonthRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             binding.bestOfMonthRecyclerview.adapter = BomAdapter(requireContext(), listBestOFMonth)
 
         }
@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
             val data = value?.toObjects(ColorTones::class.java)
             listOfColorTones.addAll(data!!)
 
-            binding.theColorToneRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
+            binding.theColorToneRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             binding.theColorToneRecyclerview.adapter = ColorToneAdapter(requireContext(), listOfColorTones)
 
         }

@@ -14,7 +14,6 @@ class CatListActivity : AppCompatActivity() {
     lateinit var binding: ActivityCatListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityCatListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -22,7 +21,8 @@ class CatListActivity : AppCompatActivity() {
         val uid = intent.getStringExtra("uid")
         val name = intent.getStringExtra("name")
 
-        db.collection("categories").addSnapshotListener { value, error ->
+        db.collection("categories").document(uid!!).collection("wallpaper").addSnapshotListener { value, error ->
+
             val listOfCategories = arrayListOf<Categories>()
             val data = value?.toObjects(Categories::class.java)
             listOfCategories.addAll(data!!)

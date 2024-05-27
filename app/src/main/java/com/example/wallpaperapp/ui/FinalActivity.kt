@@ -7,15 +7,13 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.wallpaperapp.databinding.ActivityFinalBinding
 import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -28,30 +26,39 @@ import java.util.Objects
 import kotlin.random.Random
 
 class FinalActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityFinalBinding
+    var urlImage : URL? = null
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityFinalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val url = intent.getStringExtra("link")
-        val urlImage = URL(url)
+
+        try {
+            urlImage = URL(url)
+        } catch (e: Exception) {
+            e.stackTrace
+        }
         Glide.with(this).load(url).into(binding.finalActivityWallpaper)
 
         // code for set wallpaper -------------->
         binding.buttonSetWallpaper.setOnClickListener{
             val result: Deferred<Bitmap?> = GlobalScope.async {
-                urlImage.toBitmap()
+                urlImage?.toBitmap()
             }
-
             GlobalScope.launch(Dispatchers.Main) {
 
                 val wallpaperManager = WallpaperManager.getInstance(applicationContext)
                 wallpaperManager.setBitmap(result.await())
-
+                Toast.makeText(
+                    this@FinalActivity,
+                    "Wallpaper set successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-
 
         }
 
@@ -59,7 +66,7 @@ class FinalActivity : AppCompatActivity() {
         binding.buttonDownload.setOnClickListener{
 
             val result: Deferred<Bitmap?> = GlobalScope.async {
-                urlImage.toBitmap()
+                urlImage?.toBitmap()
             }
 
             GlobalScope.launch(Dispatchers.Main) {
@@ -82,6 +89,7 @@ class FinalActivity : AppCompatActivity() {
 
         val name = "Amoled-${random1 + random2}"
         val data: OutputStream
+
         try {
             val resolver = contentResolver
             val contentValues = ContentValues()
@@ -96,7 +104,7 @@ class FinalActivity : AppCompatActivity() {
             val imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
             data = resolver.openOutputStream(Objects.requireNonNull(imageUri)!!)!!
             image?.compress(Bitmap.CompressFormat.JPEG, 100, data)
-            Objects.requireNonNull<OutputStream>(data)
+            Objects.requireNonNull<OutputStream?>(data)
             Toast.makeText(this, "Image saved", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Toast.makeText(this, "Image not saved", Toast.LENGTH_SHORT).show()

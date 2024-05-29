@@ -14,6 +14,7 @@ class CatListActivity : AppCompatActivity() {
     lateinit var binding: ActivityCatListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityCatListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

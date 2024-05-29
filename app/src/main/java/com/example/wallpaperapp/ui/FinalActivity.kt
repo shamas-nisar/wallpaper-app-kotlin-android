@@ -32,6 +32,7 @@ class FinalActivity : AppCompatActivity() {
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityFinalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

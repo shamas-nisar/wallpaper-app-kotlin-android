@@ -20,8 +20,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeFragment : Fragment() {
 
-    lateinit var binding: FragmentHomeBinding
-    lateinit var db: FirebaseFirestore
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

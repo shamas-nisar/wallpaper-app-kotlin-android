@@ -1,11 +1,10 @@
 package com.example.wallpaperapp.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.wallpaperapp.adapter.BomAdapter
@@ -26,14 +25,14 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false )
 
         db = FirebaseFirestore.getInstance()
 
-        db.collection("bestofmonth").addSnapshotListener { value, error ->
+        db.collection("bestofmonth").addSnapshotListener { value, _ ->
             val listBestOFMonth = arrayListOf<Bom>()
             val data = value?.toObjects(Bom::class.java)
             listBestOFMonth.addAll(data!!)
@@ -43,7 +42,7 @@ class HomeFragment : Fragment() {
 
         }
 
-        db.collection("colortones").addSnapshotListener { value, error ->
+        db.collection("colortones").addSnapshotListener { value, _ ->
             val listOfColorTones = arrayListOf<ColorTones>()
             val data = value?.toObjects(ColorTones::class.java)
             listOfColorTones.addAll(data!!)
@@ -53,7 +52,7 @@ class HomeFragment : Fragment() {
 
         }
 
-        db.collection("categories").addSnapshotListener { value, error ->
+        db.collection("categories").addSnapshotListener { value, _ ->
             val listOfCategories = arrayListOf<Categories>()
             val data = value?.toObjects(Categories::class.java)
             listOfCategories.addAll(data!!)

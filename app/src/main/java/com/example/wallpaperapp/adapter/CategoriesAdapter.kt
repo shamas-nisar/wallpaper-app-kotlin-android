@@ -13,21 +13,21 @@ import com.example.wallpaperapp.ui.CatListActivity
 import com.example.wallpaperapp.R
 import com.example.wallpaperapp.model.Categories
 
-class CategoriesAdapter(val requireContext: Context, val listOfCategories: ArrayList<Categories>) : RecyclerView.Adapter<CategoriesAdapter.bomViewHolder>() {
+class CategoriesAdapter(private val requireContext: Context, private val listOfCategories: ArrayList<Categories>) : RecyclerView.Adapter<CategoriesAdapter.CatViewHolder>() {
 
-    inner class bomViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class CatViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        val showImage = itemView.findViewById<ImageView>(R.id.cat_img)
-        val catName = itemView.findViewById<TextView>(R.id.cat_name)
+        val showImage: ImageView = itemView.findViewById(R.id.cat_img)
+        val catName: TextView = itemView.findViewById(R.id.cat_name)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): bomViewHolder {
-        return bomViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatViewHolder {
+        return CatViewHolder(
             LayoutInflater.from(requireContext).inflate(R.layout.item_categories, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CatViewHolder, position: Int) {
         holder.catName.text = listOfCategories[position].name
         Glide.with(requireContext).load(listOfCategories[position].link).into(holder.showImage)
 

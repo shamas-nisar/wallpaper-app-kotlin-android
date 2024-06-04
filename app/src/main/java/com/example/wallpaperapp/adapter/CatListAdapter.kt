@@ -12,20 +12,20 @@ import com.example.wallpaperapp.R
 import com.example.wallpaperapp.model.Categories
 import com.makeramen.roundedimageview.RoundedImageView
 
-class CatListAdapter(val requireContext: Context, val listBestOFMonth: ArrayList<Categories>) : RecyclerView.Adapter<CatListAdapter.bomViewHolder>() {
+class CatListAdapter(private val requireContext: Context, private val listBestOFMonth: ArrayList<Categories>) : RecyclerView.Adapter<CatListAdapter.CatListViewHolder>() {
 
-    inner class bomViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class CatListViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        val showImage = itemView.findViewById<RoundedImageView>(R.id.catList_images)
+        val showImage: RoundedImageView = itemView.findViewById(R.id.catList_images)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): bomViewHolder {
-        return bomViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatListViewHolder {
+        return CatListViewHolder(
             LayoutInflater.from(requireContext).inflate(R.layout.item_cat_list, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CatListViewHolder, position: Int) {
         Glide.with(requireContext).load(listBestOFMonth[position].link).into(holder.showImage)
         holder.itemView.setOnClickListener {
             val intent = Intent(requireContext, FinalActivity::class.java)

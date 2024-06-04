@@ -14,12 +14,12 @@ import java.io.File
 
 class DownloadFragment : Fragment() {
 
-    lateinit var binding : FragmentDownloadBinding
+    private lateinit var binding : FragmentDownloadBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentDownloadBinding.inflate(layoutInflater, container, false)
 

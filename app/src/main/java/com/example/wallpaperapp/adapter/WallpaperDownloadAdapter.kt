@@ -9,20 +9,20 @@ import com.bumptech.glide.Glide
 import com.example.wallpaperapp.R
 import com.makeramen.roundedimageview.RoundedImageView
 
-class WallpaperDownloadAdapter(val requireContext: Context, val listBestOFMonth: ArrayList<String>) : RecyclerView.Adapter<WallpaperDownloadAdapter.bomViewHolder>() {
+class WallpaperDownloadAdapter(private val requireContext: Context, private val listBestOFMonth: ArrayList<String>) : RecyclerView.Adapter<WallpaperDownloadAdapter.WallDownloadViewHolder>() {
 
-    inner class bomViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class WallDownloadViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        val showImage = itemView.findViewById<RoundedImageView>(R.id.catList_images)
+        val showImage: RoundedImageView = itemView.findViewById(R.id.catList_images)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): bomViewHolder {
-        return bomViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WallDownloadViewHolder {
+        return WallDownloadViewHolder(
             LayoutInflater.from(requireContext).inflate(R.layout.item_cat_list, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: WallDownloadViewHolder, position: Int) {
         Glide.with(requireContext).load(listBestOFMonth[position]).into(holder.showImage)
     }
 

@@ -14,19 +14,19 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:elevation="12dp"
-            android:background="#9F91F3"
+            android:background="@drawable/home_top_shape"
             android:gravity="center"
             android:layout_alignParentTop="true">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginStart="20dp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/nunito_bold"
+                android:gravity="center"
                 android:text="Amoled Wallpapers"
-                android:textSize="29dp"
-                android:textColor="@color/normal_text_color"/>
+                android:textColor="@color/normal_text_color"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:text="Best of the Month"
                 android:textColor="@color/normal_text_color"
-                android:fontFamily="@font/nunito_semi_bold"
+                android:fontFamily="@font/nunito_bold"
                 android:textSize="18sp"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -69,14 +69,13 @@
                 android:layout_height="wrap_content"
                 android:text="The Color Tones"
                 android:textColor="@color/normal_text_color"
-                android:fontFamily="@font/nunito_semi_bold"
+                android:fontFamily="@font/nunito_bold"
                 android:textSize="18sp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/the_color_tone_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
 
         </LinearLayout>
 
@@ -94,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:text="Categories"
                 android:textColor="@color/normal_text_color"
-                android:fontFamily="@font/nunito_semi_bold"
+                android:fontFamily="@font/nunito_bold"
                 android:textSize="18sp"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -102,10 +101,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-
         </LinearLayout>
 
     </RelativeLayout>
-
 
 </FrameLayout>

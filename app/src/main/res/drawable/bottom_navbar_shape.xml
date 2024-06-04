@@ -3,7 +3,14 @@
 
     <solid android:color="#647AB7"/>
     <corners
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"/>
+        android:topLeftRadius="20dp"
+        android:topRightRadius="20dp"/>
+    <gradient
+        android:endColor="#7A105BCC"
+        android:startColor="#BE5B18D3"
+        android:type="linear"
+        android:centerColor="#5E36E4F4"/>
+    <stroke
+        android:color="#5E36E4F4" />
 
 </shape>

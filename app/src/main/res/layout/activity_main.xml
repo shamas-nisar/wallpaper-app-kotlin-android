@@ -26,10 +26,11 @@
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_gravity="center"
-                android:background="@drawable/navbar_home_icon"/>
+                android:background="@drawable/navbar_home_icon"
+                android:backgroundTint="@color/normal_text_color"/>
 
         </FrameLayout>
 
@@ -40,11 +41,11 @@
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_gravity="center"
-                android:background="@drawable/navbar_download_icon"/>
-
+                android:background="@drawable/navbar_download_icon"
+                android:backgroundTint="@color/normal_text_color"/>
         </FrameLayout>
 
     </LinearLayout>

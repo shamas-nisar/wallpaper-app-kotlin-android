@@ -1,7 +1,10 @@
 package com.example.wallpaperapp.ui
 
 import android.os.Bundle
+import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.wallpaperapp.adapter.CatListAdapter
 import com.example.wallpaperapp.databinding.ActivityCatListBinding
@@ -13,6 +16,10 @@ class CatListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCatListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
 
         binding = ActivityCatListBinding.inflate(layoutInflater)
         setContentView(binding.root)

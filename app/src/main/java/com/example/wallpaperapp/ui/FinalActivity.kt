@@ -10,6 +10,7 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.bumptech.glide.Glide
 import com.example.wallpaperapp.databinding.ActivityFinalBinding
 import kotlinx.coroutines.Deferred
@@ -27,11 +28,14 @@ import kotlin.random.Random
 
 class FinalActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityFinalBinding
-    var urlImage : URL? = null
+    private lateinit var binding: ActivityFinalBinding
+    private var urlImage : URL? = null
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
 
         binding = ActivityFinalBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -76,7 +80,7 @@ class FinalActivity : AppCompatActivity() {
         }
     }
 
-    fun URL.toBitmap(): Bitmap? {
+    private fun URL.toBitmap(): Bitmap? {
         return try {
             BitmapFactory.decodeStream(openStream())
         } catch (e:IOException) {

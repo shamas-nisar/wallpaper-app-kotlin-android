@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.wallpaperapp.adapter.BomAdapter
@@ -57,7 +59,7 @@ class HomeFragment : Fragment() {
             val data = value?.toObjects(Categories::class.java)
             listOfCategories.addAll(data!!)
 
-            val layoutManagement = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            val layoutManagement = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
             binding.categoryRecyclerview.layoutManager = layoutManagement
             binding.categoryRecyclerview.adapter = CategoriesAdapter(requireContext(), listOfCategories)
 //            binding.categoryRecyclerview.layoutManager = GridLayoutManager(requireContext(),2)
